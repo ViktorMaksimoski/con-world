@@ -25,7 +25,7 @@ const SignIn = () => {
                 </div>
                 <div className='w-full flex flex-row justify-between'>
                 <button className="px-3 py-2 shadow-md bg-white rounded-md">Sign In</button>
-                <Link href="/auth/signup"><p className='cursor-pointer font-bold'>Haven't account yet?</p></Link>
+                
                 </div>
             </div>
            
