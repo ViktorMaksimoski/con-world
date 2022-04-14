@@ -1,9 +1,13 @@
-import { PrismaClient } from "@prisma/client";
-import getUsers from "../../lib/getUsers";
-
-const prisma = new PrismaClient();
+import { db } from "../../lib/db.server";
 
 export default async function handler(req, res) {
-    let users = await prisma.user.findMany()
-    res.status(200).send([{userName: 'viktor', id: 1}, {userName: 'zive', id: 2}])
+    const id = req.id
+
+    const user = await db.user.findFirst({
+        where: {
+            id
+        }
+    })
+
+    res.status(200).json(user)
 }
